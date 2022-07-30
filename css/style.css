@@ -1,0 +1,1023 @@
+@charset "utf-9";
+/* 스킵 네비게이션 */
+.skip {
+  position: relative;
+}
+
+.skip a {
+  position: absolute;
+  left: 0;
+  top: -35px;
+  width: 140px;
+  line-height: 30px;
+  border: 1px solid #fff;
+  background: #333;
+  color: #fff;
+  text-align: center;
+}
+
+.skip a:active,
+.skip a:focus {
+  top: 0;
+}
+/* 레이아웃 */
+#header { 
+  height: 325px;
+  background: url(../img/header_bg.jpg) repeat-x;
+}
+
+#footer { 
+  border-top: 1px solid #eee ;
+}
+
+/* 메인 레이아웃 */
+
+#main__nav {
+  display: none;
+  background-color: #f6fdff;
+}
+
+#main__tit {
+  background-color: #EAF7FD;
+}
+
+#main__ban {
+  background: #dceff7;
+}
+
+#main__cont {
+  background-color: #f6fdff;
+}
+
+/* 컨테이너 */
+.container {
+  width: 990px;
+  height: inherit;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.3);
+}
+
+/* 헤더 */
+.header__menu {
+  text-align: right;
+}
+
+.header__menu a {
+  display: inline-block;
+  color: #fff;
+  padding: 10px 0 10px 13px;
+}
+.header__menu a:hover {
+  color: #666;
+}
+
+.header__tit {
+  text-align: center;
+}
+
+.header__tit h1 {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 5px 20px 6px 20px;
+  background: #4aa8d4;
+  font-size: 28px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.header__tit a {
+  display: inline;
+  margin: -5px;
+  padding: 5px 20px 6px 20px;
+  background: #2698cb;
+  font-size: 18px;
+  color: #fff;
+}
+
+.header__icon {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.header__icon a {
+  display: inline-block;
+  margin: 0 3px;
+  width: 60px;
+  height: 60px;
+  background: url(../img/icon.png);
+}
+
+.header__icon a.icon1 {
+  background-position: 0 0;
+}
+
+.header__icon a.icon2 {
+  background-position: 0 -60px;
+}
+
+.header__icon a.icon3 {
+  background-position: 0 -120px;
+}
+
+.header__icon a.icon4 {
+  background-position: 0 -180px;
+}
+
+.header__icon a.icon1:hover {
+  background-position: -60px 0;
+}
+
+.header__icon a.icon2:hover {
+  background-position: -60px -60px;
+}
+
+.header__icon a.icon3:hover {
+  background-position: -60px -120px;
+}
+
+.header__icon a.icon4:hover {
+  background-position: -60px -180px;
+}
+
+/* 전체 메뉴 */
+
+/* float: left로 인한 영역깨짐(height:0) 방지법 
+        1. 깨지는 영역에 똑같이 float:left를 사용한다.(X) --> 모든 박스에 float:left를 사용하게 됩니다.
+        2. float의 성질을 차단하는 clear: both;를 사용한다.(X) --> 어떤 영역이 깨졌는지 찾기 어려움.
+        3. float을 사용한 상위 박스한테 overflow: hidden을 사용합니다. (O) --> 현재는 제일 많이 사용.
+        4. clearfix를 사용합니다. (O)
+*/        
+.nav {
+  padding: 30px 0;
+  overflow: hidden;
+}
+
+.nav > div {
+  float: left;
+  width: 40%;
+}
+
+.nav > div h3 {
+  margin-bottom: 4px;
+  font-size: 18px;
+  color: #25a2d0;
+}
+
+.nav > div.last {
+  width: 20%;
+}
+
+.nav > div ol {
+  overflow: hidden;
+}
+
+.nav > div ol li {
+  float: left;
+  width: 50%;
+}
+
+.nav > div ol li:hover {
+  text-decoration: underline;
+}
+
+.nav > div.last ol li {
+  width: 100%;
+}
+
+/* 타이틀 */
+
+.tit {
+  position: relative;
+}
+
+.tit h2 {
+  padding: 5px 0;
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Nanum Brush Script', cursive;
+  letter-spacing: 2px;
+  color: #2c94c4;
+}
+
+.tit .btn{
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: url(../img/icon.png) no-repeat 0 -600px;
+}
+
+.tit .btn.on {
+  background-position: 0 -660px;
+}
+
+/* 배너 */
+
+/* .ban {
+  position: relative;
+  padding: 24px 0 20px;
+}
+
+.ban a.prev,
+.ban a.next {
+  position: absolute;
+  top: 60px;
+  width: 43px;
+  height: 43px;
+  background: url(../img/icon.png);
+}
+
+.ban a.prev {
+  left: -60px;
+  background-position: -150px 0;
+}
+
+.ban a.prev:hover {
+  background-position: -193px 0;
+}
+
+.ban a.next {
+  right: -60px;
+  background-position: -150px -43px;
+}
+
+.ban a.next:hover {
+  background-position: -193px -43px;
+}
+
+.ban ul {
+  overflow: hidden;
+}
+
+.ban ul li {
+  float: left;
+  width: 330px;
+}
+
+.ban ul li img {
+  border: 4px solid #dcdcdc;
+}
+
+.ban ul li img:hover {
+  border: 4px solid #98bcdc;
+}
+
+.ban__img1 {
+  text-align: left;
+}
+
+.ban__img2 {
+  text-align: center;
+}
+
+.ban__img3 {
+  text-align: right;
+} */
+
+/* 슬릭배너 */
+.ban {
+  position: relative;
+  padding: 24px 0 40px;
+}
+
+.ban .slick-prev,
+.ban .slick-next {
+  position: absolute;
+  top: 60px;
+  width: 43px;
+  height: 43px;
+  background: url(../img/icon.png);
+  text-indent: -9999px;
+  cursor: pointer;
+}
+
+.ban .slick-prev {
+  left: -80px;
+  background-position: -150px 0;
+}
+
+.ban .slick-prev:hover {
+  background-position: -193px 0;
+}
+
+.ban .slick-next {
+  right: -80px;
+  background-position: -150px -43px;
+}
+
+.ban .slick-next:hover {
+  background-position: -193px -43px;
+}
+
+.ban img {
+  width: 100%;
+  box-sizing: border-box;
+  border: 4px solid #dcdcdc;
+}
+
+.ban img:hover {
+  border: 4px solid #98bcdc;
+}
+
+.ban .slick-slide {
+  padding-right: 10px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+.ban .slick-dots {
+  display: block; 
+  position: absolute; 
+  bottom: 15px; 
+  width: 100%; 
+  text-align: center;}
+
+.ban .slick-dots li {
+  display: inline-block; 
+  width: 15px; 
+  height: 15px; 
+  margin: 5px;
+}
+
+.ban .slick-dots li button {
+  display: block;
+  width: 15px;
+  height: 15px;
+  line-height: 0;
+  font-size: 0;
+  cursor: pointer;
+  background: #5dbfeb; border-radius: 50%;
+}
+
+.ban .slick-dots li.slick-active button {
+  background: #2b91c8;
+}
+
+
+/* 컨탠츠 */
+
+.cont {
+  padding-top: 30px;
+  overflow: hidden;
+}
+
+.cont .column {
+  position: relative;
+  float: left;
+  width: 289px;
+  height: 363px;
+  margin: 0 30px 30px 0;
+  padding-right: 30px;
+}
+
+.cont .col1 {
+  border-right: 1px solid #c8c8c8;
+}
+
+.cont .col2 {
+  border-right: 1px solid #c8c8c8;
+}
+
+.cont .col3 {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.cont .col4 {
+  border-right: 1px solid #c8c8c8;
+}
+
+.cont .col5 {
+  border-right: 1px solid #c8c8c8;
+}
+
+.cont .col6 {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.cont .column .ico-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: url(../img/icon.png) no-repeat;
+}
+
+.cont .column .ico-tit {
+  padding-left: 70px;
+  font-size: 16px;
+  color: #2c94c4;
+}
+
+.cont .column .ico-desc {
+  margin-bottom: 15px;
+  padding-left: 70px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.cont .col1 .ico-img {
+  background-position: 0px -240px;
+}
+
+.cont .col2 .ico-img {
+  background-position: 0px -300px;
+}
+
+.cont .col3 .ico-img {
+  background-position: 0px -360px;
+}
+
+.cont .col4 .ico-img {
+  background-position: 0px -420px;
+}
+
+.cont .col5 .ico-img {
+  background-position: 0px -480px;
+}
+
+.cont .col6 .ico-img {
+  background-position: 0px -540px;
+}
+
+.cont .col1 .ico-img:hover {
+  background-position: -60px -240px;
+}
+
+.cont .col2 .ico-img:hover {
+  background-position: -60px -300px;
+}
+
+.cont .col3 .ico-img:hover {
+  background-position: -60px -360px;
+}
+
+.cont .col4 .ico-img:hover {
+  background-position: -60px -420px;
+}
+
+.cont .col5 .ico-img:hover {
+  background-position: -60px -480px;
+}
+
+.cont .col6 .ico-img:hover {
+  background-position: -60px -540px;
+}
+
+/* 게시판 */
+.notice {
+  position: relative;
+}
+
+.notice h4 {
+  padding-bottom: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0093bd;
+}
+
+.notice ul li {
+  padding-left: 8px;
+  background: url(../img/dot.gif) no-repeat 0 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.notice ul li a {
+  font-size: 12px;
+}
+
+.notice a.more {
+  display: block;
+  position: absolute;
+  top: 0; 
+  right: 0;
+  width: 17px;
+  height: 17px;
+  background: url(../img/icon.png) -150px -90px;
+}
+
+/* 게시판2 */
+.notice2 {
+  position: relative;
+  margin-top: 15px;
+}
+.notice2 h4 {
+  padding-bottom: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0093bd;
+}
+
+.notice2 li {
+  padding-left: 8px;
+  background: url(../img/dot.gif) no-repeat 0 8px;
+  overflow: hidden;
+}
+.notice2 li a {
+  float: left;
+  width: 65%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.notice2 li span {
+  float: right;
+  width: 30%;
+}
+
+.notice2 a.more {
+  display: block;
+  position: absolute;
+  top: 0; 
+  right: 0;
+  width: 17px;
+  height: 17px;
+  background: url(../img/icon.png) -150px -90px;
+}
+
+/* 게시판3 */
+.notice3 {
+  position: relative;
+}
+
+.notice3 h4 {
+  padding-bottom: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0093bd;
+}
+
+.notice3 li {
+  position: relative;
+  padding: 8px 0 14px 60px;
+}
+
+.notice3 li a img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  border: 1px solid #0093bd;
+}
+.notice3 li a strong {
+  display: block;
+}
+
+.notice3 li a span {
+  display: block;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.notice3 a.more {
+  display: block;
+  position: absolute;
+  top: 0; 
+  right: 0;
+  width: 17px;
+  height: 17px;
+  background: url(../img/icon.png) -150px -90px;
+}
+
+/* 마우스 오버효과1 */
+.notice-hover h4 {
+  padding-bottom: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #0093bd;
+}
+.notice-hover ul {
+  overflow: hidden;
+}
+
+.notice-hover li {
+  float: left;
+  width: 93px;
+  margin-right: 5px;
+  text-align: center;
+}
+
+.notice-hover li:last-child {
+  margin-right: 0;
+}
+
+.notice-hover li a span {
+  display: block;
+  position: relative;
+  width: 93px;
+  height: 93px;
+  line-height: 93px;
+}
+
+.notice-hover li a span img {
+  width: 100%;
+}
+
+.notice-hover li a span em {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  visibility: hidden;
+}
+
+.notice-hover li a span:hover em {
+  visibility: visible;
+}
+
+.notice-hover li a strong {
+  display: inline-block;
+  padding-top: 3px;
+  font-size: 12px;
+}
+
+/* 마우스 오버효과2 */
+.notice-hover2 ul {
+  overflow: hidden;
+}
+
+.notice-hover2 li {
+  float: left;
+  width: 93px;
+  text-align: center;
+}
+
+.notice-hover2 li:last-child {
+  margin-right: 0;
+}
+
+.notice-hover2 li a span {
+  position: relative;
+  display: block;
+  width: 93px;
+  height: 93px;
+}
+
+.notice-hover2 li a span img {
+  width: 100%;
+}
+
+.notice-hover2 li a span em {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  visibility: hidden;
+}
+
+.notice-hover2 li a span:hover em {
+  visibility: visible;
+}
+
+.notice-hover2 li a strong {
+  display: inline-block;
+  padding-top: 3px;
+  font-size: 12px;
+}
+
+/* 탭메뉴 */
+.tab-menu {
+  position: relative;
+  border: 1px solid #ccc;
+  height: 105px;
+  padding: 8px;
+}
+
+.tab-menu ul {
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.tab-menu li {
+  float: left;
+  margin-right: -1px;
+  margin-bottom: -1px;
+  /* border를 음수마진으로 겹치기! */
+  border: 1px solid #ccc ;
+}
+
+.tab-menu li a {
+  display: block;
+  padding: 5px 10px;
+}
+.tab-menu ul li ul {
+  position: absolute;
+  left: 0;
+  top: 48px;
+  width: 270px;
+  border: 0;
+}
+
+.tab-menu ul li ul li {
+  float: none;
+  border: 0;
+  background: url(../img/dot.gif) no-repeat 9px 8px;
+  padding-left: 18px;
+}
+
+.tab-menu ul li ul li a {
+  width: 100%;
+  padding: 0 0 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tab-menu .active {
+  background: #2c94c4;
+}
+
+.tab-menu .active > a {
+  color: #fff;
+}
+
+/* 게시판4 */
+.notice4 {
+  position: relative;
+}
+
+.notice4 h4 {
+  border-bottom: 1px solid #ccc ;
+  padding: 8px 10px;
+  color: #0093bd;
+}
+
+.notice4 h4 em {
+  color: #cf3292;
+}
+
+.notice4 ul {
+  padding: 10px;
+}
+.notice4 li {
+  overflow: hidden;
+  background: url(../img/dot.gif) no-repeat 0 8px;
+  padding-left: 8px;
+  padding-bottom: 2px;
+}
+
+.notice4 li a {
+  float: left;
+  width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.notice4 li span {
+  float: right;
+  width: 30%;
+  text-align: right;
+}
+
+.notice4 .more {
+  position: absolute;
+  right: 9px;
+  top: 9px;
+}
+
+/* 갤러리 */
+
+.gallery {
+  position: relative;
+  border: 1px solid #ccc;
+  height: 255px;
+  overflow: hidden;
+}
+
+.gallery h4 {
+  padding: 10px 0 8px 11px;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+}
+
+.gallery__btn {
+  position: absolute;
+  right: 5px;
+  top: 7px;
+}
+
+.gallery__btn li {
+  float: left;
+  margin: 1px 2px;
+}
+
+.gallery__icon a {
+  display: block;
+  width: 23px;
+  height: 23px;
+  background: url(../img/icon.png) no-repeat;
+}
+
+.gallery__icon.icon1 {
+  background-position: -150px -120px;
+}
+
+.gallery__icon.icon2 {
+  background-position: -150px -143px;
+}
+
+.gallery__icon.icon3 {
+  background-position: -150px -166px;
+}
+
+.gallery__icon.icon4 {
+  background-position: -150px -189px;
+}
+
+.gallery__icon.icon1:hover {
+  background-position: -173px -120px;
+}
+
+.gallery__icon.icon2:hover {
+  background-position: -173px -143px;
+}
+
+.gallery__icon.icon3:hover {
+  background-position: -173px -166px;
+}
+
+.gallery__icon.icon4:hover {
+  background-position: -173px -189px;
+}
+
+.gallery__img img {
+  width: 100%;
+}
+
+/* 슬릭 갤러리 */
+.gallery__btn button {
+  display: block;
+  float: left;
+  width: 23px;
+  height: 23px;
+  margin: 1px 2px;
+  background: url(../img/icon.png) no-repeat;
+  cursor: pointer;
+}
+/* 로그인 */
+
+.login {
+  padding: 15px;
+  background: #f2f4f5;
+}
+
+.login__header {
+  height: 30px;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.login__check {
+  float: left;
+  padding-right: 15px;
+}
+
+.login__check-input {
+  vertical-align: -2px;
+}
+
+.login__ip {
+  float: left;
+}
+
+.login__ip em {
+  color: #0093bd;
+  text-decoration: underline;
+}
+
+.login__content {
+  position: relative;
+}
+
+.login__txt-input {
+  width: 182px;
+  height: 16px;
+  margin-bottom: 3px;
+  padding: 2px 5px;
+  border: 1px solid #bebebe;
+  background: #fff;
+}
+
+.login__btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 62px;
+  height: 47px;
+  border: 1px solid #bebebe;
+  background: #fff;
+}
+
+.login__footer {
+  margin-top: 5px;
+}
+
+.login__footer li {
+  display: inline;
+}
+
+.login__footer li a {
+  font-size: 12px;
+}
+
+/* 팝업 */
+.popup h4 {
+  font-size: 14px;
+  color: #0093bd;
+  padding-bottom: 4px;
+  font-weight: 700;
+}
+
+.popup ul {
+  overflow: hidden;
+}
+
+.popup li {
+  float: left;
+  width: 93px;
+  margin-right: 5px;
+}
+
+.popup li:last-child {
+  margin-right: 0;
+}
+
+.popup li img {
+  width: 100%;
+}
+
+/* 푸터 */
+
+footer {
+  padding: 25px 0;
+  text-align: center;
+}
+
+footer ul {
+  margin-bottom: 20px;
+}
+
+footer li {
+  display: inline;
+  position: relative;
+  padding: 0 7px 0 10px;
+}
+footer li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 1px;
+  height: 12px;
+  background: #ccc;
+}
+
+footer li:first-child::before {
+  display: none;
+}
+
+/* 레이어 팝업 */
+.layer {
+  display: none;
+  position: fixed;
+  left: 50px;
+  top: 50px;
+  width: 700px;
+  border: 10px solid #dceff7;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.4);
+}
+
+.layer img {
+  display: block;
+  width: 100%;
+}
+
+.layer .close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 1px 6px;
+  background: #0093bd;
+  color: #fff;
+}
+
+.layer .close:hover {
+  text-decoration: underline;
+}
